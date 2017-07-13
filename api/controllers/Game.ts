@@ -89,6 +89,10 @@ export class Game implements IGame {
   }
 
   private makeMove(): void {
+    if (this.winner !== undefined) {
+      return;
+    }
+
     const empties: number[][] = [];
     for (let i = 0; i < this.board.length; i += 1) {
       let row = this.board[i];
